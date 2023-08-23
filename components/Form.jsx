@@ -13,6 +13,7 @@ import {
 export default function Form() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   const toast = useToast();
+  const [disableSubmit, setDisableSubmit] = useState(false)
 
   const [name, setName] = useState("");
   const [selects, setSelects] = useState([]);
@@ -104,6 +105,16 @@ export default function Form() {
     }
     
     handlePost(formData)
+    setDisableSubmit(true)
+
+    return toast({
+        position: "bottom-right",
+        title: "Submission Successful",
+        description: "See you on the internet!",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
   };
 
   const handlePost = async (values) => {
@@ -154,7 +165,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Singer/Songwriter")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -165,7 +176,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Musician")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -176,7 +187,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Producer")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -187,7 +198,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Industry Professional")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -200,7 +211,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Software Engineer")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -211,7 +222,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Visual Artist")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -222,7 +233,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Collector")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -233,7 +244,7 @@ export default function Form() {
             <Checkbox
               mr={"12px"}
               borderColor={"blackAlpha.500"}
-              size={"sm"}
+              size={"md"}
               onChange={() => handleSelectChange("Other")}
             />
             <Text color={"blackAlpha.500"} fontSize={"12px"}>
@@ -325,6 +336,7 @@ export default function Form() {
         fontSize={"14px"}
         fontWeight={"400"}
         onClick={handleSubmit}
+        isDisabled={disableSubmit}
       >
         Submit
       </Button>
