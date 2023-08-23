@@ -25,13 +25,18 @@ export default function Home() {
 
   useEffect(() => {
     const audioElement = document.getElementById("audioElement");
+    const audioElementEnd = document.getElementById("audioElementEnd");
     if (isPlaying) {
       // Start or restart the animation
       animationControls.start({ rotate: 360 });
       audioElement.play();
     } else {
       // Stop the animation
-      animationControls.stop();
+      setTimeout(() => {
+        animationControls.stop();
+      }, 2000);
+
+      audioElementEnd?.play();
       if (audioElement) {
         audioElement.pause();
         audioElement.currentTime = 0;
@@ -45,6 +50,9 @@ export default function Home() {
         <Box position="relative" h="100%">
           <audio id="audioElement" loop>
             <source src="soundEffect.mp3" type="audio/mpeg" />
+          </audio>
+          <audio id="audioElementEnd">
+            <source src="soundEffectStop.mp3" type="audio/mpeg" />
           </audio>
           <Box position="absolute">
             <motion.div
