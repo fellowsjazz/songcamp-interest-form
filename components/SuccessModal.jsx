@@ -49,7 +49,7 @@ export default function SuccessModal(props) {
                 </Button>
               </Flex>
               <Text color={"black"} fontSize={"16px"} mt={"36px"}>
-                We'll keep you updated with{" "}
+                We&apos;ll keep you updated with{" "}
               </Text>
               <Text
                 color={"black"}
