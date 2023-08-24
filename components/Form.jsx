@@ -9,11 +9,13 @@ import {
   useMediaQuery,
   useToast,
 } from "@chakra-ui/react";
+import SuccessModal from "./SuccessModal";
 
 export default function Form() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   const toast = useToast();
-  const [disableSubmit, setDisableSubmit] = useState(false)
+  const [disableSubmit, setDisableSubmit] = useState(false);
+  const [modalOn, setModalOn] = useState(true);
 
   const [name, setName] = useState("");
   const [selects, setSelects] = useState([]);
@@ -103,18 +105,19 @@ export default function Form() {
         isClosable: true,
       });
     }
-    
-    handlePost(formData)
-    setDisableSubmit(true)
+
+    handlePost(formData);
+    setDisableSubmit(true);
+    setModalOn(true)
 
     return toast({
-        position: "bottom-right",
-        title: "Submission Successful",
-        description: "See you on the internet!",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
+      position: "bottom-right",
+      title: "Submission Successful",
+      description: "See you on the internet!",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
   };
 
   const handlePost = async (values) => {
@@ -134,8 +137,13 @@ export default function Form() {
     }
   };
 
+  const handleModalClose = () => {
+    setModalOn(false);
+  };
+
   return (
     <Flex flexDirection={"column"}>
+      {modalOn ? <SuccessModal handleModalClose={handleModalClose} /> : null}
       <Text color={"black"} fontSize={"14px"} mt={"24px"}>
         Name
       </Text>
