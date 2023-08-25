@@ -108,7 +108,7 @@ export default function Form() {
 
     handlePost(formData);
     setDisableSubmit(true);
-    setModalOn(true)
+    setModalOn(true);
 
     return toast({
       position: "bottom-right",
@@ -142,15 +142,15 @@ export default function Form() {
   };
 
   return (
-    <Flex flexDirection={"column"}>
+    <Flex flexDirection={"column"} >
       {modalOn ? <SuccessModal handleModalClose={handleModalClose} /> : null}
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Name
       </Text>
       <Input
         my={"6px"}
         w={"100%"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
@@ -160,7 +160,7 @@ export default function Form() {
         color={"black"}
         onChange={handleNameChange}
       />
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Select all that apply
       </Text>
       <Flex mt={"12px"}>
@@ -174,9 +174,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Singer/Songwriter")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Singer/Songwriter
             </Text>
           </Flex>
@@ -185,9 +186,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Musician")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Musician
             </Text>
           </Flex>
@@ -196,9 +198,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Producer")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Producer
             </Text>
           </Flex>
@@ -207,9 +210,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Industry Professional")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Industry Professional
             </Text>
           </Flex>
@@ -220,9 +224,11 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Software Engineer")}
+              
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Software Engineer
             </Text>
           </Flex>
@@ -231,9 +237,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Visual Artist")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Visual Artist
             </Text>
           </Flex>
@@ -242,9 +249,10 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Collector")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Collector
             </Text>
           </Flex>
@@ -253,21 +261,22 @@ export default function Form() {
               mr={"12px"}
               borderColor={"blackAlpha.500"}
               size={"md"}
+              colorScheme="gray"
               onChange={() => handleSelectChange("Other")}
             />
-            <Text color={"blackAlpha.500"} fontSize={"12px"}>
+            <Text color={"blackAlpha.500"} fontSize={"14px"}>
               Other
             </Text>
           </Flex>
         </Flex>
       </Flex>
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Full Ethereum Address
       </Text>
       <Input
         my={"6px"}
         w={"100%"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
@@ -277,13 +286,13 @@ export default function Form() {
         color={"black"}
         onChange={handleWalletAddressChange}
       />
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Twitter
       </Text>
       <Input
         my={"6px"}
         w={"100%"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
@@ -293,13 +302,13 @@ export default function Form() {
         color={"black"}
         onChange={handleTwitterChange}
       />
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Email
       </Text>
       <Input
         my={"6px"}
         w={"100%"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
@@ -309,13 +318,13 @@ export default function Form() {
         color={"black"}
         onChange={handleEmailChange}
       />
-      <Text color={"black"} fontSize={"14px"} mt={"24px"}>
+      <Text color={"black"} fontSize={"16px"} mt={"24px"}>
         Music
       </Text>
       <Input
         my={"6px"}
         w={"100%"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
@@ -331,7 +340,7 @@ export default function Form() {
           borderColor={"blackAlpha.700"}
           onChange={(e) => setSubscribe(!subscribe)}
         />
-        <Text color={"black"} fontSize={"12px"}>
+        <Text color={"black"} fontSize={"14px"}>
           Subscribe to Songcamp
         </Text>
       </Flex>
@@ -341,10 +350,12 @@ export default function Form() {
         textColor={"white"}
         backgroundColor={"black"}
         fontFamily={"Helvetica"}
-        fontSize={"14px"}
+        fontSize={"16px"}
         fontWeight={"400"}
         onClick={handleSubmit}
         isDisabled={disableSubmit}
+        _hover={{ background: "#000000", opacity: "0.5" }}
+        letterSpacing={"-0.8px"}
       >
         Submit
       </Button>

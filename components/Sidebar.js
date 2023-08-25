@@ -16,6 +16,13 @@ export default function Sidebar() {
       borderRight={isLargerThan1000 ? "1px solid #000" : "none"}
       background="var(--0, #FFF)"
       flexShrink={0}
+      maxH={"100vh"}
+      overflowY={"auto"}
+      sx={{
+        "&::-webkit-scrollbar": {
+          display: "none", // Hide the scrollbar
+        },
+      }}
     >
       <Box
         display="flex"
@@ -33,19 +40,13 @@ export default function Sidebar() {
           <Image src="/headerLogo4.svg" />
         </Box>
         <Box display={"flex"} mt={isLargerThan1000 ? "4vh" : "32px"}>
-          <Image src="/Song.svg" mr={"4px"} />
-          <Image src="/Camp.svg" />
+          <Image src="/songCamp.svg" />
         </Box>
-        <Text
-          color="#000"
-          fontSize="clamp(12px, 14px, 14px)"
-          lineHeight="normal"
-          mt={"16px"}
-        >
+        <Text color="#000" fontSize="16px" lineHeight="normal" mt={"16px"}>
           Welcome to Songcamp. We are an artist collective and creative studio
           unlocking new ways of creating and releasing music on the internet.
-          Please provide the information below to signal your interest as
-          a participant, a collector, or an innocent bystander.
+          Please provide the information below to signal your interest as a
+          participant, a collector, or an innocent bystander.
         </Text>
         <Form />
       </Box>

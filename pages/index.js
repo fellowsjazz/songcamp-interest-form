@@ -9,12 +9,12 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
-import { motion, useAnimation } from "framer-motion"; // Import useAnimation
+import { motion, useAnimation, useAnimate } from "framer-motion"; // Import useAnimation
 import { BsFillEjectFill } from "react-icons/bs";
 
 export default function Home() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
-  const backgroundImage = "/bgCd.png"; // Path to your background image
+  const backgroundImage = "/bgCd.svg"; // Path to your background image
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleClick = () => {
@@ -23,13 +23,16 @@ export default function Home() {
 
   const animationControls = useAnimation(); // Initialize animation controls
 
+  const [scope, animate] = useAnimate()
+
   useEffect(() => {
     const audioElement = document.getElementById("audioElement");
     const audioElementEnd = document.getElementById("audioElementEnd");
     if (isPlaying) {
       // Start or restart the animation
-      animationControls.start({ rotate: 360 });
+      animationControls.start({ rotate: 1000000});
       audioElement.play();
+
     } else {
       // Stop the animation
       setTimeout(() => {
@@ -47,20 +50,21 @@ export default function Home() {
   return (
     <>
       {isLargerThan1000 ? (
-        <Box position="relative" h="100%">
+        <Box position="relative" maxH="100%" overflow={"hidden"}>
           <audio id="audioElement" loop>
             <source src="soundEffect.mp3" type="audio/mpeg" />
           </audio>
           <audio id="audioElementEnd">
             <source src="soundEffectStop.mp3" type="audio/mpeg" />
           </audio>
-          <Box position="absolute">
+          <Box position="absolute" mt={"5%"} ml={"5%"}>
             <motion.div
               initial={{ rotate: 0 }}
               animate={animationControls} // Use the animation controls here
               transition={{ duration: 0.1, repeat: Infinity }}
+              ref={scope}
             >
-              <Image src={backgroundImage} h="100%" />
+              <Image src={backgroundImage} h="777px" />
             </motion.div>
           </Box>
           <Flex justify="flex-start" position="relative" zIndex={1}>

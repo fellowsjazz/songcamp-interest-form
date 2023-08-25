@@ -1,4 +1,3 @@
-
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import Fonts from "../components/Fonts";
@@ -15,7 +14,13 @@ function MyApp({ Component, pageProps }) {
       },
     },
     fonts: {
-      body: `'Neue Haas Grotesk Display Pro', sans-serif`,
+      body: `'Helvetica', sans-serif`,
+    },
+    colors: {
+      customColor1: "#FF5733",
+
+      customColor2: "#00AABB",
+      // Add more custom colors here
     },
   });
 
