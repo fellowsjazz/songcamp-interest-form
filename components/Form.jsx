@@ -85,11 +85,11 @@ export default function Form() {
       `Name:${name} Selects:${selects} Wallet:${walletAddress} Twitter:${twitter} Email:${email} Music:${music} Subscribe:${subscribe}`
     );
     console.log(`Post Payload Prepped (formData): `, formData);
-    if (!name || !walletAddress || !email) {
+    if (!name || !email) {
       return toast({
         position: "bottom-right",
         title: "Submission Error",
-        description: "Name, Wallet Address, and Email are required fields",
+        description: "Name and Email are required fields",
         status: "error",
         duration: 5000,
         isClosable: true,

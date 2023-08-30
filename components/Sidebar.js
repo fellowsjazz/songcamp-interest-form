@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <Box
       display="inline-flex"
-      height="100%"
+      height="100vh"
       py={isLargerThan1000 ? "4vh" : "32px"}
       px={isLargerThan1000 ? "64px" : "0px"}
       flexDirection="column"
