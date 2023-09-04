@@ -319,7 +319,7 @@ export default function Form() {
         onChange={handleEmailChange}
       />
       <Text color={"black"} fontSize={"16px"} mt={"24px"}>
-        Music
+        Links
       </Text>
       <Input
         my={"6px"}
@@ -328,7 +328,7 @@ export default function Form() {
         variant={"unstyled"}
         borderBottom={"1px solid #000"}
         borderRadius={"0"}
-        placeholder="if you’re a musician, drop a link to your tracks"
+        placeholder="drop a link to some of your work"
         _placeholder={{ opacity: 0.2, color: "black" }}
         py={"8px"}
         color={"black"}
