@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <>
       <Layout
-        title="Songcamp"
+        title="Songcamp Interest Form"
         description="Welcome to Songcamp. We are an artist collective and creative studio unlocking new ways of creating and releasing music on the internet. Please provide the information below to signal your interest as a participant, a collector, or an innocent bystander."
         imageUrl="/favicon.ico"
       />

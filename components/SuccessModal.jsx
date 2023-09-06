@@ -21,7 +21,7 @@ export default function SuccessModal(props) {
       top={"50%"}
       left={"50%"}
       transform={"translate(-50%, -50%)"}
-      width={isLargerThan1000 ? "421px" : "85%"}
+      width={isLargerThan1000 ? "895px" : "85%"}
       height={isLargerThan1000 ? "auto" : "auto"}
       border={"1px"}
       borderColor={"black"}
@@ -41,30 +41,32 @@ export default function SuccessModal(props) {
                 <Image src="union.svg" />
               </Button>
             </Flex>
+            <Flex justify={"space-between"} align={"flex-end"}>
+              <Flex direction={"column"}>
+                <Text color={"black"} fontSize={"16px"} w={"349px"} mt={"36px"}>
+                  We host a one hour live call on our Discord called the
+                  Songcamp Heartbeat. Mondays. 4pm Eastern. 1pm Pacific. Other
+                  times in other places.
+                </Text>
 
-            <Flex direction={"column"}>
-              <Text color={"black"} fontSize={"16px"} w={"349px"} mt={"36px"}>
-                We host a one hour live call on our Discord called the Songcamp
-                Heartbeat. Mondays. 4pm Eastern. 1pm Pacific. Other times in
-                other places.
-              </Text>
-
-              <Button
-                as={"a"}
-                href="https://discord.com/invite/wHsJD2sTpc"
-                borderRadius={"173px"}
-                h={"48px"}
-                textColor={"white"}
-                backgroundColor={"black"}
-                fontFamily={"Helvetica"}
-                fontSize={"16px"}
-                fontWeight={"400"}
-                mt={"36px"}
-                _hover={{ background: "#000000", opacity: "0.5" }}
-                letterSpacing={"-0.8px"}
-              >
-                Join us on Discord
-              </Button>
+                <Button
+                  as={"a"}
+                  href="https://discord.com/invite/wHsJD2sTpc"
+                  borderRadius={"173px"}
+                  h={"48px"}
+                  textColor={"white"}
+                  backgroundColor={"black"}
+                  fontFamily={"Helvetica"}
+                  fontSize={"16px"}
+                  fontWeight={"400"}
+                  mt={"36px"}
+                  _hover={{ background: "#000000", opacity: "0.5" }}
+                  letterSpacing={"-0.8px"}
+                >
+                  Join us on Discord
+                </Button>
+              </Flex>
+              <Image src="littleGuy.svg" h={"200px"} />
             </Flex>
           </Flex>
         </>
@@ -84,7 +86,7 @@ export default function SuccessModal(props) {
                 Heartbeat. Mondays. 4pm Eastern. 1pm Pacific. Other times in
                 other places.
               </Text>
-
+              <Image src="littleGuy.svg"  my={"18px"}/>
               <Button
                 as={"a"}
                 href="https://discord.com/invite/wHsJD2sTpc"
@@ -98,7 +100,6 @@ export default function SuccessModal(props) {
                 mt={"36px"}
                 _hover={{ background: "#000000", opacity: "0.5" }}
                 letterSpacing={"-0.8px"}
-                
               >
                 Join us on Discord
               </Button>
