@@ -15,7 +15,7 @@ export default function Form() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   const toast = useToast();
   const [disableSubmit, setDisableSubmit] = useState(false);
-  const [modalOn, setModalOn] = useState(true);
+  const [modalOn, setModalOn] = useState(false);
 
   const [name, setName] = useState("");
   const [selects, setSelects] = useState([]);
