@@ -11,6 +11,7 @@ import {
 import Sidebar from "../components/Sidebar";
 import { motion, useAnimation, useAnimate } from "framer-motion"; // Import useAnimation
 import { BsFillEjectFill } from "react-icons/bs";
+import Layout from "../components/Layout";
 
 export default function Home() {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -23,16 +24,15 @@ export default function Home() {
 
   const animationControls = useAnimation(); // Initialize animation controls
 
-  const [scope, animate] = useAnimate()
+  const [scope, animate] = useAnimate();
 
   useEffect(() => {
     const audioElement = document.getElementById("audioElement");
     const audioElementEnd = document.getElementById("audioElementEnd");
     if (isPlaying) {
       // Start or restart the animation
-      animationControls.start({ rotate: 1000000});
+      animationControls.start({ rotate: 1000000 });
       audioElement.play();
-
     } else {
       // Stop the animation
       setTimeout(() => {
@@ -49,6 +49,11 @@ export default function Home() {
 
   return (
     <>
+      <Layout
+        title="Songcamp"
+        description="Welcome to Songcamp. We are an artist collective and creative studio unlocking new ways of creating and releasing music on the internet. Please provide the information below to signal your interest as a participant, a collector, or an innocent bystander."
+        imageUrl="/favicon.ico"
+      />
       {isLargerThan1000 ? (
         <Box position="relative" maxH="100%" overflow={"hidden"}>
           <audio id="audioElement" loop>
